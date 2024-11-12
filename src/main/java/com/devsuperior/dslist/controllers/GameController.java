@@ -19,15 +19,15 @@ public class GameController {
     @Autowired
     private GameService gameService;
 
-    @GetMapping
-    public List<GameMinDTO> listarTodos () {
-        List<GameMinDTO> result = gameService.listarTodos();
-        return result;
-    }
-
     @GetMapping(value = "/{id}")
     public GameDTO listarPorId (@PathVariable Long id) {
         GameDTO result = gameService.listarPorId(id);
+        return result;
+    }
+
+    @GetMapping
+    public List<GameMinDTO> listarTodos () {
+        List<GameMinDTO> result = gameService.listarTodos();
         return result;
     }
 }

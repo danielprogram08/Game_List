@@ -1,33 +1,37 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
-import com.devsuperior.dslist.projections.GameMinProjection;
 
-public class GameMinDTO {
+public class GameDTO {
+
     private Long id;
     private String title;
     private int year;
+    private String genre;
+    private String platforms;
+    private double score;
     private String imgUrl;
     private String shortDescription;
+    private String longDescription;
 
-    public GameMinDTO() {
+    public GameDTO () {
     }
 
-    public GameMinDTO(Game entity) {
+    
+
+    public GameDTO(Game entity) {
         id = entity.getId();
         title = entity.getTitle();
         year = entity.getYear();
+        genre = entity.getGenre();
+        platforms = entity.getPlatforms();
+        score = entity.getScore();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+        longDescription = entity.getLongDescription();
     }
 
-    public GameMinDTO(GameMinProjection projection) {
-        id = projection.getId();
-        title = projection.getTitle();
-        year = projection.getYear();
-        imgUrl = projection.getImgUrl();
-        shortDescription = projection.getShortDescription();
-    }
+
 
     public Long getId() {
         return id;
@@ -41,11 +45,27 @@ public class GameMinDTO {
         return year;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getPlatforms() {
+        return platforms;
+    }
+
+    public double getScore() {
+        return score;
+    }
+
     public String getImgUrl() {
         return imgUrl;
     }
 
     public String getShortDescription() {
         return shortDescription;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
     }
 }

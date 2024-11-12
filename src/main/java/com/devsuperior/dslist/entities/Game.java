@@ -116,6 +116,7 @@ public class Game {
         this.longDescription = longDescription;
     }
 
+    //Comparar os IDs;
     @Override
     public int hashCode() {
         final int prime = 31;

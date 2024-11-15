@@ -1,0 +1,7 @@
+POST http://localhost:8080/lists/2/replacement
+Content-Type: application/json
+
+    {
+        "sourceIndex": 2,
+        "destinationIndex": 1
+    }
